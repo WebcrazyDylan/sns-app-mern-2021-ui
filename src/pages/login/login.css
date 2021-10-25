@@ -24,7 +24,7 @@
 .loginLogo {
   font-size: 50px;
   font-weight: 800;
-  color: #1775ee;
+  color: #f20f3a;
   margin-bottom: 10px;
 }
 
@@ -58,11 +58,19 @@
   height: 50px;
   border-radius: 10px;
   border: none;
-  background-color: #1775ee;
+  background-color: #f20f3a;
   color: white;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.loginButton:focus {
+  outline: none;
+}
+
+.loginButton:disabled {
+  cursor: not-allowed;
 }
 
 .loginForgot {
@@ -76,7 +84,7 @@
   height: 50px;
   border-radius: 10px;
   border: none;
-  background-color: #42b72a;
+  background-color: #008060;
   color: white;
   font-size: 20px;
   font-weight: 500;
