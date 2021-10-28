@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { registerCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
-// import axios from "axios";
 
 export default function Register() {
   const { isFetching, dispatch } = useContext(AuthContext);
