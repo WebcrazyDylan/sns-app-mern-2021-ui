@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { axiosInstance } from "../../apiCalls";
 import "./chatOnline.css";
 
 export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
@@ -9,7 +9,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
 
   useEffect(() => {
     const getFriends = async () => {
-      const res = await axios.get("/users/friends/" + currentId);
+      const res = await axiosInstance.get("/users/friends/" + currentId);
       setFriends(res.data);
     };
 
@@ -22,7 +22,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
 
   const handleClick = async (user) => {
     try {
-      const res = await axios.get(
+      const res = await axiosInstance.get(
         `/conversations/find/${currentId}/${user._id}`
       );
       setCurrentChat(res.data);

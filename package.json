@@ -1,7 +1,5 @@
 {
   "name": "sns-react-ui-2021",
-  "proxy": "http://localhost:8800/api",
-  "proxy": "https://sns-app-mern-2021-api.herokuapp.com/api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

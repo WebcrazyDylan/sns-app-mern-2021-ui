@@ -2,10 +2,10 @@ import "./post.css";
 import { useContext, useEffect, useState } from "react";
 import { MoreVert } from "@material-ui/icons";
 // import { Users } from "../../dummyData";
-import axios from "axios";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { axiosInstance } from "../../apiCalls";
 
 export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
@@ -20,7 +20,7 @@ export default function Post({ post }) {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/users?userId=${post.userId}`);
+      const res = await axiosInstance.get(`/users?userId=${post.userId}`);
       setUser(res.data);
     };
     fetchUser();
@@ -28,7 +28,9 @@ export default function Post({ post }) {
 
   const likeHandler = () => {
     try {
-      axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
+      axiosInstance.put("/posts/" + post._id + "/like", {
+        userId: currentUser._id
+      });
     } catch (err) {
       alert(err.response.data ? err.response.data.message : err.message);
     }

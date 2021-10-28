@@ -32,7 +32,7 @@ export default function Register() {
       registerCall(user, dispatch);
 
       // try {
-      //   await axios.post("/auth/register", user);
+      //   await axiosInstance.post("/auth/register", user);
       //   history.push("/login");
       // } catch (err) {
       //   console.log(err);
