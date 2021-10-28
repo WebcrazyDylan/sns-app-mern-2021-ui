@@ -28,6 +28,7 @@ export default function Rightbar({ user }) {
     };
     getFriends();
     setFollowed(currentUser?.followings.includes(user?._id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const handleClick = async () => {
